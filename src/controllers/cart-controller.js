@@ -34,10 +34,26 @@ const getSingleCart = async (req, res) => {
 const addProductToCart = async (req, res) => {
   const { cid, pid } = req.params;
   const cart = await Cart.findOne({ _id: cid });
-  const product = await Product.findOne({ _id: cid });
+  const product = await Product.findOne({ _id: pid });
   if (!cart) throw new CustomError.NotFoundError(`No cart with id: ${cid}`);
   if (!product)
     throw new CustomError.NotFoundError(`No product with id: ${pid}`);
+  let flag = true;
+  for (const item of cart.products) {
+    if (item.product.equals(product._id)) {
+      item.qty += 1;
+      flag = false;
+      break;
+    }
+  }
+  if (flag) {
+    cart.products.push({
+      product: product._id,
+      qty: 1,
+    });
+  }
+  cart.save();
+  res.status(StatusCodes.CREATED).json({ cart });
 };
 
 const getAllCarts = async (req, res) => {
