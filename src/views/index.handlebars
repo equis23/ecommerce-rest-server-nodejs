@@ -1,0 +1,13 @@
+<ul id="products">
+  {{#each products}}
+    <li>{{title}} <sup class="price">${{price}}</sup>
+      <button class="collapsible">+ info</button>
+      <div class="content">
+        <sub>available: {{stock}} | code: {{code}}</sub>
+        <p>{{description}}</p>
+      </div>
+    </li>
+  {{/each}}
+</ul>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

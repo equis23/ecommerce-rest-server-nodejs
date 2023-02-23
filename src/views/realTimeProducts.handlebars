@@ -1,0 +1,16 @@
+<div id="add">+<span>product</span></div>
+<ul id="products">
+  {{#each products}}
+    <li>{{title}} <sup class="price">${{price}}</sup>
+      <button class="collapsible">+ info</button>
+      <div class="content">
+        <sub>available: {{stock}} | code: {{code}}</sub>
+        <p>{{description}}</p>
+      </div>
+    </li>
+  {{/each}}
+</ul>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/20bdd2f3b8.js" crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index-ws.js"></script>

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+#products {
+  list-style: none;
+}
+
+.price {
+  padding: 0.3rem;
+  font-weight: bold;
+  background-color: yellow;
+}
+
+#products > li {
+  border: solid 0.1rem rgb(52, 52, 52);
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+  padding-top: 0.6rem;
+  margin: 0.6rem;
+}
+
+.active, .collapsible:hover {outline: none;
+  background-color: #ccc;
+}
+
+.content {
+  margin-top: 0.6rem;
+  padding: 0.2rem 1rem;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+#add {
+  z-index: 100;
+  position: fixed;
+  right: 1.8rem;
+  bottom: 1.8rem;
+  padding: 0 0.6rem;
+  color: white;
+  background-color: rebeccapurple;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: xx-large;
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#add:hover {
+  background-color: rgb(153, 72, 235);
+  -webkit-box-shadow:inset 0px 0px 0px 0.2rem black;
+  -moz-box-shadow:inset 0px 0px 0px 0.2rem black;
+  box-shadow:inset 0px 0px 0px 0.2rem black;
+}
+
+#add > span {
+  font-size: 18px;
+  font-weight: bolder;
+  padding-left: 0.2rem;
+}
